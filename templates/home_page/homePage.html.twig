@@ -3,27 +3,35 @@
 {% block title %}Home Page{% endblock %}
 
 {% block body %}
-<h1>Hi, welcome to my site !</h1>
-    <div class="container row ">
-    
-        <div>
-            <a class="btn btn-primary" href="{{ path('app_login') }}">Connexion</a>
-        </div>
+    <h1 class="mb-3 text-center fw-bold">BOOKSITE</h1>
+    <div class="container ">
+        <div class="d-flex flex-row mb-3 gap-3 ">
+            <div>
+                <a class="btn btn-primary" href="{{ path('app_login') }}">Login</a>
+            </div>
 
-        {% if app.user == false %}
-            <a href="{{ path('app_register') }}">Register</a>
-        {% else %}
+            {% if app.user == false %}
+                <a class="btn btn-primary " href="{{ path('app_register') }}">Register</a>
+            {% else %}
+                <div>
+                    <a class="btn btn-danger " href="{{ path('app_logout') }}">Logout</a>
+                </div>
+                <div>
+                    <a class="btn btn-secondary " href="{{ path('app_dashboard_user', {'id': app.user.id}) }}">Profile</a>
+                </div>
+            {% endif %}
+            {% if is_granted("ROLE_ADMIN")%}
             <div>
-                <a class="btn btn-danger" href="{{ path('app_logout') }}">Disconnection</a>
+                <a class="btn btn-warning " href="{{ path('app_dashboard_admin') }}">Admin Dashboard</a>
             </div>
-            <div>
-                <a class="btn btn-secondary" href="{{ path('app_dashboard_user', {'id': app.user.id}) }}">Profile</a>
-            </div>
-        {% endif %}
-        {% if is_granted("ROLE_ADMIN")%}
-        <div>
-            <a class="btn btn-warning" href="{{ path('app_dashboard_admin') }}">Admin Dashboard</a>
+            {% endif %}
         </div>
-        {% endif %}
     </div>
+    <div class="container">
+        <img src="" alt="">
+        <img src="" alt="">
+        <img src="" alt="">
+        <img src="" alt="">
+    </div>
+
 {% endblock %}

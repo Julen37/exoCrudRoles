@@ -19,7 +19,7 @@ class RegistrationController extends AbstractController
     public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager): Response
     {
         $user = new User();
-        $form = $this->createForm(RegistrationFormType::class, $user);
+        $form = $this->createForm(RegistrationFormType::class, $user, ['is_registration' => true]);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -42,41 +42,39 @@ class RegistrationController extends AbstractController
         ]);
     }
 
-    //UPDATE USER
-    #[Route('/update/{id}', name: 'app_home_page_registerUpdate')] 
-    public function update_form($id, Request $request, EntityManagerInterface $entityManager): Response 
-    {
-        $crud = $entityManager->getRepository(User::class)->find($id);
-        $form = $this->createForm(RegistrationFormType::class, $crud); 
-        $form->handleRequest($request);
-        if  ( $form->isSubmitted() && $form->isValid()){ 
-            $entityManager->persist($crud);
-            $entityManager->flush(); 
+    // //UPDATE USER
+    // #[Route('/update/{id}', name: 'app_home_page_registerUpdate')] 
+    // public function update_form($id, Request $request, EntityManagerInterface $entityManager): Response 
+    // {
+    //     $crud = $entityManager->getRepository(User::class)->find($id);
+    //     $form = $this->createForm(RegistrationFormType::class, $crud, ['is_registration' => true]); 
+    //     $form->handleRequest($request);
+    //     if  ( $form->isSubmitted() && $form->isValid()){ 
+    //         $entityManager->persist($crud);
+    //         $entityManager->flush(); 
 
-            // $this->addFlash('notice', 'Modification réussie !');
+    //         // $this->addFlash('notice', 'Modification réussie !');
 
-            return $this->redirectToRoute('app_home_page'); 
-        }
+    //         return $this->redirectToRoute('app_home_page'); 
+    //     }
 
-        return $this->render('registration/registerUpdate.html.twig', [ 
-            'registrationForm' => $form->createView()
-        ]);
-    }
+    //     return $this->render('registration/registerUpdate.html.twig', [ 
+    //         'registrationForm' => $form->createView()
+    //     ]);
+    // }
 
-    
+    // //DELETE
+    // #[Route('/delete/{id}', name: 'app_home_page_registerDelete')] 
+    // public function delete_form($id, EntityManagerInterface $entityManager): Response 
+    // {
+    //     $crud = $entityManager->getRepository(User::class)->find($id);
+    //     $entityManager->remove($crud); 
+    //     $entityManager->flush(); 
 
-    //DELETE
-    #[Route('/delete/{id}', name: 'app_home_page_registerDelete')] 
-    public function delete_form($id, EntityManagerInterface $entityManager): Response 
-    {
-        $crud = $entityManager->getRepository(User::class)->find($id);
-        $entityManager->remove($crud); 
-        $entityManager->flush(); 
+    //     // $this->addFlash('notice', 'Suppression réussie !');
 
-        // $this->addFlash('notice', 'Suppression réussie !');
-
-        return $this->redirectToRoute('app_home_page'); 
-    }
+    //     return $this->redirectToRoute('app_home_page'); 
+    // }
 
     
 }

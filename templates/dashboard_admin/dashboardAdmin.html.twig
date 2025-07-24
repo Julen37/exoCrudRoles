@@ -15,7 +15,7 @@
                     <h5 class="card-title">{{data.lastname}} {{data.firstname}}</h5>
                     <p class="card-text">{{data.email}}</p>
                     {# <p class="card-text">{{data.roles}}</p> #}
-                    <a href="{{ path('app_home_page_registerUpdate',{'id': data.id}) }}" class="btn btn-warning ">Modify</a>
+                    <a href="{{ path('app_home_page_registerUpdateAdmin',{'id': data.id}) }}" class="btn btn-warning ">Modify</a>
                     <a href="{{ path('app_home_page_registerDelete',{'id': data.id}) }}" class="btn btn-danger ">Delete</a>
                 </div>
             </div>
