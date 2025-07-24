@@ -4,24 +4,26 @@
 
 {% block body %}
 <h1>Hi, welcome to my site !</h1>
-    <div>
-        <a href="{{ path('app_login') }}">Connexion</a>
-    </div>
-
-    {% if app.user == false %}
-        <a href="{{ path('app_register') }}">Register</a>
-    {% else %}
+    <div class="container row ">
+    
         <div>
-            <a href="{{ path('app_logout') }}">Disconnection</a>
+            <a class="btn btn-primary" href="{{ path('app_login') }}">Connexion</a>
         </div>
-        <div>
-            <a href="{{ path('app_dashboard_user', {'id': app.user.id}) }}">Profile</a>
-        </div>
-    {% endif %}
-    {% if is_granted("ROLE_ADMIN")%}
-    <div>
-        <a href="{{ path('app_dashboard_admin') }}">Admin Dashboard</a>
-    </div>
-    {% endif %}
 
+        {% if app.user == false %}
+            <a href="{{ path('app_register') }}">Register</a>
+        {% else %}
+            <div>
+                <a class="btn btn-danger" href="{{ path('app_logout') }}">Disconnection</a>
+            </div>
+            <div>
+                <a class="btn btn-secondary" href="{{ path('app_dashboard_user', {'id': app.user.id}) }}">Profile</a>
+            </div>
+        {% endif %}
+        {% if is_granted("ROLE_ADMIN")%}
+        <div>
+            <a class="btn btn-warning" href="{{ path('app_dashboard_admin') }}">Admin Dashboard</a>
+        </div>
+        {% endif %}
+    </div>
 {% endblock %}
