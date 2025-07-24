@@ -15,7 +15,7 @@
             <a href="{{ path('app_logout') }}">Disconnection</a>
         </div>
         <div>
-            <a href="{{ path('app_dashboard_user') }}">Profile</a>
+            <a href="{{ path('app_dashboard_user', {'id': app.user.id}) }}">Profile</a>
         </div>
     {% endif %}
     {% if is_granted("ROLE_ADMIN")%}

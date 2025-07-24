@@ -4,4 +4,25 @@
 
 {% block body %}
 
+<div>
+    <a href="{{ path('app_home_page') }}" class="btn btn-light ">To Home Page</a>
+</div>
+    <div class="container"> 
+        <div class="row">
+            {% for data in datas %}
+            <div class="card text-bg-dark m-4 col-3 " > {# m-4 c'est la marge / col-3 c'est pour faire des colonnes #}
+                <div class="card-body border-light mb-3 " >
+                    <h5 class="card-title">{{data.lastname}} {{data.firstname}}</h5>
+                    <p class="card-text">{{data.email}}</p>
+                    {# <p class="card-text">{{data.roles}}</p> #}
+                    <a href="{{ path('app_home_page_registerUpdate',{'id': data.id}) }}" class="btn btn-warning ">Modify</a>
+                    <a href="{{ path('app_home_page_registerDelete',{'id': data.id}) }}" class="btn btn-danger ">Delete</a>
+                </div>
+            </div>
+            {% endfor %}   
+        </div>
+    </div>
+    {# <div>
+        <a href="{{ path('app_home_page_registerDeleteAll',{'id': data.id}) }}" class="btn btn-danger ">Delete All</a>
+    </div> #}
 {% endblock %}
