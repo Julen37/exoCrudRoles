@@ -12,7 +12,10 @@
         <a href="{{ path('app_register') }}">Register</a>
     {% else %}
         <div>
-            <a href="{{ path('app_logout') }}">Deconnexion</a>
+            <a href="{{ path('app_logout') }}">Disconnection</a>
+        </div>
+        <div>
+            <a href="{{ path('app_dashboard_user') }}">Profile</a>
         </div>
     {% endif %}
     {% if is_granted("ROLE_ADMIN")%}
@@ -20,4 +23,5 @@
         <a href="{{ path('app_dashboard_admin') }}">Admin Dashboard</a>
     </div>
     {% endif %}
+
 {% endblock %}
