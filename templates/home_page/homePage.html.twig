@@ -3,6 +3,12 @@
 {% block title %}Home Page{% endblock %}
 
 {% block body %}
+
+    {% for message in app.flashes('notice')%}
+            <div class="alert alert-success">
+                {{message}}
+            </div>
+    {% endfor %}
     <h1 class="mb-3 text-center fw-bold">BOOKSITE</h1>
     <div class="container ">
         <div class="d-flex flex-row mb-3 gap-3 ">

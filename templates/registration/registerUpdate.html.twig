@@ -5,28 +5,30 @@
 
 {% block body %}
 
-<div>
-    <a href="{{ path('app_home_page') }}" class="btn btn-light ">To Home Page</a>
-</div>
+    <div>
+        <a href="{{ path('app_home_page') }}" class="btn btn-light ">To Home Page</a>
+        <a href="{{ path('app_dashboard_admin') }}" class="btn btn-warning ">To Dashboard</a>
+    </div>
 
 
 
-    <h1>Profile Update</h1>
+    <h1 class="mb-3 font-weight-normal text-center">Profile Update</h1>
+    <div class="container d-flex justify-content-center">   
+        {{ form_errors(registrationForm) }}
 
-    {{ form_errors(registrationForm) }}
+        {{ form_start(registrationForm) }}
+            {{ form_row(registrationForm.email, {
+                label: 'Email'
+            }) }}
+            {{ form_row(registrationForm.firstname, {
+                label: 'First name'
+            }) }}
+            {{ form_row(registrationForm.lastname, {
+                label: 'Last name'
+            }) }}
+            
 
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.email, {
-            label: 'email'
-        }) }}
-        {{ form_row(registrationForm.firstname, {
-            label: 'First name'
-        }) }}
-        {{ form_row(registrationForm.lastname, {
-            label: 'Last name'
-        }) }}
-        
-
-        <button type="submit" class="btn">Update Profile</button>
-    {{ form_end(registrationForm) }}
+            <button type="submit" class="btn btn-primary mb-3 d-flex ms-auto m-4">Update Profile</button>
+        {{ form_end(registrationForm) }}
+    </div>
 {% endblock %}

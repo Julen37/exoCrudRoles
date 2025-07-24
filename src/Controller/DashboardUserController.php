@@ -34,9 +34,9 @@ final class DashboardUserController extends AbstractController
             $entityManager->persist($crud);
             $entityManager->flush(); 
 
-            // $this->addFlash('notice', 'Modification réussie !');
+            $this->addFlash('notice', 'Edit successfull !');
 
-            return $this->redirectToRoute('app_dashboard_admin'); 
+            return $this->redirectToRoute('app_home_page'); 
         }
 
         return $this->render('registration/registerUpdate.html.twig', [ 
@@ -52,7 +52,7 @@ final class DashboardUserController extends AbstractController
         $entityManager->remove($crud); 
         $entityManager->flush(); 
 
-        // $this->addFlash('notice', 'Suppression réussie !');
+        $this->addFlash('notice', 'Deletation successfull !');
 
         return $this->redirectToRoute('app_home_page'); 
     }

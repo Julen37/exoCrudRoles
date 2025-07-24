@@ -42,39 +42,4 @@ class RegistrationController extends AbstractController
         ]);
     }
 
-    // //UPDATE USER
-    // #[Route('/update/{id}', name: 'app_home_page_registerUpdate')] 
-    // public function update_form($id, Request $request, EntityManagerInterface $entityManager): Response 
-    // {
-    //     $crud = $entityManager->getRepository(User::class)->find($id);
-    //     $form = $this->createForm(RegistrationFormType::class, $crud, ['is_registration' => true]); 
-    //     $form->handleRequest($request);
-    //     if  ( $form->isSubmitted() && $form->isValid()){ 
-    //         $entityManager->persist($crud);
-    //         $entityManager->flush(); 
-
-    //         // $this->addFlash('notice', 'Modification réussie !');
-
-    //         return $this->redirectToRoute('app_home_page'); 
-    //     }
-
-    //     return $this->render('registration/registerUpdate.html.twig', [ 
-    //         'registrationForm' => $form->createView()
-    //     ]);
-    // }
-
-    // //DELETE
-    // #[Route('/delete/{id}', name: 'app_home_page_registerDelete')] 
-    // public function delete_form($id, EntityManagerInterface $entityManager): Response 
-    // {
-    //     $crud = $entityManager->getRepository(User::class)->find($id);
-    //     $entityManager->remove($crud); 
-    //     $entityManager->flush(); 
-
-    //     // $this->addFlash('notice', 'Suppression réussie !');
-
-    //     return $this->redirectToRoute('app_home_page'); 
-    // }
-
-    
 }
