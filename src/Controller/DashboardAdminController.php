@@ -29,6 +29,7 @@ final class DashboardAdminController extends AbstractController
 
     //UPDATE ADMIN
     #[Route('/update/{id}', name: 'app_home_page_registerUpdateAdmin')] 
+    #[IsGranted("ROLE_ADMIN")]
     public function update_form($id, Request $request, EntityManagerInterface $entityManager): Response 
     {
         $crud = $entityManager->getRepository(User::class)->find($id);
@@ -50,6 +51,7 @@ final class DashboardAdminController extends AbstractController
 
     //DELETE
     #[Route('/delete/{id}', name: 'app_home_page_registerDelete')] 
+    #[IsGranted("ROLE_ADMIN")]
     public function delete_form($id, EntityManagerInterface $entityManager): Response 
     {
         $crud = $entityManager->getRepository(User::class)->find($id);
