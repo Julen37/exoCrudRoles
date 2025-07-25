@@ -50,7 +50,7 @@ final class DashboardAdminController extends AbstractController
     }
 
     //DELETE
-    #[Route('/delete/{id}', name: 'app_home_page_registerDelete')] 
+    #[Route('/delete/{id}', name: 'app_home_page_registerDeleteAdmin')] 
     #[IsGranted("ROLE_ADMIN")]
     public function delete_form($id, EntityManagerInterface $entityManager): Response 
     {

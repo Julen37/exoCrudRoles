@@ -6,14 +6,15 @@
     <div>
         <a href="{{ path('app_home_page') }}" class="btn btn-light ">To Home Page</a>
     </div>
+    <h1 class="mb-3 text-center fw-bold">BOOKSITE</h1>
     <form method="post">
         {% if error %}
             <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
         {% endif %}
 
         {% if app.user %}
-            <div class="mb-3 text-center">
-                You are logged in as {{ app.user.userIdentifier }}, <a  class="link-light" href="{{ path('app_logout') }}"> Logout</a>
+            <div class="mb-3 text-center text-light">
+                You are logged in as {{ app.user.userIdentifier }}, <a  class="link-warning" href="{{ path('app_logout') }}"> Logout</a>
             </div>
         {% endif %}
 

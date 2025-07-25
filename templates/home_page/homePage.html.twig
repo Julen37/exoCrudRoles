@@ -33,11 +33,92 @@
             {% endif %}
         </div>
     </div>
-    <div class="container">
-        <img src="" alt="">
-        <img src="" alt="">
-        <img src="" alt="">
-        <img src="" alt="">
-    </div>
-
+    
+{# normalement faire un formulaire pour recuperer les livres avec nom author et resume/avis pour les mettre là avec un data in datas specifique aux livres/formulaire#}
+    {% if app.user == true %} 
+        <div>
+            <h1 class="h3 mb-3 font-weight-normal text-center">Your books</h1>
+        </div>  
+        <div class="container"> 
+            <div class="row d-flex justify-content-center">
+                <div class="card text-bg-dark m-4 col-3 " > {# m-4 c'est la marge / col-3 c'est pour faire des colonnes #}
+                    <div class="card-body border-light mb-3 " >
+                        <h5 class="card-title">name book</h5>
+                        <p class="card-text">author</p>
+                        <p class="card-text">resume/avis</p>
+                    </div>
+                </div>   
+                <div class="card text-bg-dark m-4 col-3 " >
+                    <div class="card-body border-light mb-3 " >
+                        <h5 class="card-title">name book</h5>
+                        <p class="card-text">author</p>
+                        <p class="card-text">resume/avis</p>
+                    </div>
+                </div>  
+                <div class="card text-bg-dark m-4 col-3 " >
+                    <div class="card-body border-light mb-3 " >
+                        <h5 class="card-title">name book</h5>
+                        <p class="card-text">author</p>
+                        <p class="card-text">resume/avis</p>
+                    </div>
+                </div>  
+                <div class="card text-bg-dark m-4 col-3 " > 
+                    <div class="card-body border-light mb-3 " >
+                        <h5 class="card-title">name book</h5>
+                        <p class="card-text">author</p>
+                        <p class="card-text">resume/avis</p>
+                    </div>
+                </div>  
+                <div class="card text-bg-dark m-4 col-3 " > 
+                    <div class="card-body border-light mb-3 " >
+                        <h5 class="card-title">name book</h5>
+                        <p class="card-text">author</p>
+                        <p class="card-text">resume/avis</p>
+                    </div>
+                </div>  
+                <div class="card text-bg-dark m-4 col-3 " > 
+                    <div class="card-body border-light mb-3 " >
+                        <h5 class="card-title">name book</h5>
+                        <p class="card-text">author</p>
+                        <p class="card-text">resume/avis</p>
+                    </div>
+                </div>  
+                <div class="card text-bg-dark m-4 col-3 " > 
+                    <div class="card-body border-light mb-3 " >
+                        <h5 class="card-title">name book</h5>
+                        <p class="card-text">author</p>
+                        <p class="card-text">resume/avis</p>
+                    </div>
+                </div>  
+                <div class="card text-bg-dark m-4 col-3 " > 
+                    <div class="card-body border-light mb-3 " >
+                        <h5 class="card-title">name book</h5>
+                        <p class="card-text">author</p>
+                        <p class="card-text">resume/avis</p>
+                    </div>
+                </div>  
+                <div class="card text-bg-dark m-4 col-3 " > 
+                    <div class="card-body border-light mb-3 " >
+                        <h5 class="card-title">name book</h5>
+                        <p class="card-text">author</p>
+                        <p class="card-text">resume/avis</p>
+                    </div>
+                </div> 
+                <div class="card text-bg-dark m-4 col-3 " > 
+                    <div class="card-body border-light mb-3 " >
+                        <h5 class="card-title">name book</h5>
+                        <p class="card-text">author</p>
+                        <p class="card-text">resume/avis</p>
+                    </div>
+                </div>  
+                <div class="card text-bg-dark m-4 col-3 " > 
+                    <div class="card-body border-light mb-3 " >
+                        <h5 class="card-title">name book</h5>
+                        <p class="card-text">author</p>
+                        <p class="card-text">resume/avis</p>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    {% endif %}
 {% endblock %}
