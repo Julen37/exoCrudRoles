@@ -33,7 +33,7 @@
             {% endif %}
         </div>
     </div>
-    
+
 {# normalement faire un formulaire pour recuperer les livres avec nom author et resume/avis pour les mettre là avec un data in datas specifique aux livres/formulaire#}
     {% if app.user == true %} 
         <div>
@@ -121,4 +121,5 @@
             </div>
         </div>
     {% endif %}
+    {{ parent() }}
 {% endblock %}
